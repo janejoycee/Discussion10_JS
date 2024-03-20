@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <body onload = "displayInformation();"> 
     <script type="text/javascript">
+        
+        
         function displayInformation () {
             // Your code goes here. 
             // Do not change any other code in this file
             // All of the steps below must be achieved using JavaScript!
-    
+
             
             // 1. Change the h1 element to your name.
-            
+            // innerHTML changes the text within that tag --> need to use it everytime you manipluate data
+            // left half gives exact location (hopefully theres just 1 h1 on your page), right half then changes the data
+            document.querySelector("h1").innerHTML = "Jane's Pet Collection";
                
             // 2. Update the three span elements using ONLY JavaScript
-                
+            // looking for element with an ID URL. The left side directs us towards the correct span
+            // document.url fetches current url and assigns it to span
+            document.getElementById("#URL").innerHTML = document.URL;
+            // elementbyID , span has an ID, so it only looks at elements that have an ID associated with it. This is more efficent at getting
+            // the data than queryselector 
     
+            // 2b - display the number of h2 headings on the page
+            document.querySelector("#items").innerHTML = document.querySelectorAll("h2").length;
+            // the right side will look at every instance of that element and keep track of it
+
+            // 2c - display the current date, time
+            document.querySelector("#time").innerHTML = new Date();
+
             // 3. Change the background color and margin for the entire page.
-                
+            document.body.style.backgroundColor = 'yellow';
+            document.body.style.margin = '30px';
+
         }
     
         // 4. If someone uses the keyboard shortcut to copy the words "Thank you for visiting!" then add the words "Go Blue" to the final div.  
@@ -28,6 +46,7 @@
     
                    
     </script>
+    </body>
     <title>Recipes</title>
 </head>
 <body>
